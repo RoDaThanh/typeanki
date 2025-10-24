@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.typing-container {
+    position: relative; 
+    font-family: monospace;
+    font-size: 1.875rem; 
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+    min-height: 4rem;
+    padding: 0.25rem;
+}
