@@ -25,3 +25,13 @@ export function normalizeText(text) {
     // --- 8️⃣ Trim unnecessary spaces (optional but helpful) ---
     .trim();
 }
+
+export function removeSpace(text) {
+  let rest;
+  if (text.length > 0) {
+      rest = text.split(' ').filter(Boolean).join(' ');
+  } else {
+      rest = text;
+  } 
+  return rest;
+}

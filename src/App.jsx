@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import './App.css';
 import { generateWords } from './utils/wordGenerator';
-import { normalizeText }  from './utils/normalizeText';
+import { normalizeText, removeSpace }  from './utils/normalizeText';
 import PhraseFeedback from './components/PhraseFeedback';
 
 const initialState = {
@@ -154,7 +154,9 @@ function useTypingTest() {
   }, [state.phrases]);
 
   const startTyping = useCallback(() => {
-    const lines = state.inputText
+    const removedSpaceText = removeSpace(state.inputText);
+
+    const lines = removedSpaceText
       .split('\n')
       .map((l) => normalizeText(l))
       .filter(Boolean);
